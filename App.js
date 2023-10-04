@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useCallback, useEffect } from "react";
 import { StyleSheet, Text, View, FlatList, Image, TextInput } from "react-native";
+import Card from "./components/Card";
 
 const url = "https://pokeapi.co/api/v2/"
 const options = "pokemon?limit=151&offset=0";
@@ -38,22 +39,6 @@ export default function App() {
     }
   }
 
-  const renderPokemon = ({ item }) => {
-    return (
-      <View style={styles.pokemonContainer}>
-        <Text style={styles.pokemonTitle}>
-          {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
-        </Text>
-        <Image
-          style={styles.pokemonSprite}
-          source={{
-            uri: item.sprites.front_default,
-          }}
-        />
-      </View>
-    );
-  };
-
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -61,7 +46,10 @@ export default function App() {
         onChangeText={(text) => {
           handlePokemonSearch(text)
         }} />
-      <FlatList data={pokemonDetails} renderItem={renderPokemon} />
+      <FlatList
+        data={pokemonDetails}
+        renderItem={({ item }) => <Card pokemon={item} />}
+      />
     </View>
   );
 }
