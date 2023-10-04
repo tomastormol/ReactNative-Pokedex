@@ -36,7 +36,7 @@ export default StyleSheet.create({
         marginTop: 10,
         backgroundColor: 'red',
         padding: 8,
-        width: 60,
+        width: 70,
         borderRadius: 10,
         overflow: 'hidden', //Needed for borderRadius. IDK why
         textAlign: 'center',
