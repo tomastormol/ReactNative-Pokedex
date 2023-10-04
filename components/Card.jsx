@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image } from "react-native";
-import React, { Component } from 'react'
+import { Text, View, Image } from "react-native";
+import React from 'react'
+import styles from '../styles/Card'
 
 export default Card = ({ pokemon }) => {
 
@@ -17,21 +18,3 @@ export default Card = ({ pokemon }) => {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    pokemonContainer:
-    {
-        backgroundColor: "lightgrey",
-        marginTop: 10
-    },
-    pokemonTitle: {
-        fontSize: 32,
-        alignSelf: "center",
-        marginTop: 10,
-    },
-    pokemonSprite: {
-        width: 200,
-        height: 200,
-        alignSelf: "center",
-    },
-});
