@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, FlatList, TextInput } from "react-native";
+import { SafeAreaView, View, FlatList, TextInput } from "react-native";
 import Card from "../components/Card";
 import styles from './styles'
+import SearchBar from "../components/SearchBar";
 
 const url = "https://pokeapi.co/api/v2/"
 const options = "pokemon?limit=151&offset=0";
@@ -30,21 +31,9 @@ export default function Home() {
         fetchFirstGenPokemons()
     }, [])
 
-    const handlePokemonSearch = (text) => {
-        if (text) {
-            let filteredPokemonList = pokemonDetails.filter((pokemon) => pokemon.name.toLowerCase().includes(text.toLowerCase()))
-            setPokemonDetails(filteredPokemonList)
-        } else {
-            setPokemonDetails(pokemonsList);
-        }
-    }
-
     return (
-        <View style={styles.container}>
-            <TextInput placeholder="Search Pokemon"
-                onChangeText={(text) => {
-                    handlePokemonSearch(text)
-                }} />
+        <View style={{ padding: 10 }}>
+            <SearchBar pokemonDetails={pokemonDetails} setPokemonDetails={setPokemonDetails} pokemonsList={pokemonsList} />
             <FlatList
                 data={pokemonDetails}
                 renderItem={({ item }) => <Card pokemon={item} />}
