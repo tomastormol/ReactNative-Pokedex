@@ -2,15 +2,13 @@ import { Text, View, TextInput } from "react-native";
 import React from 'react'
 import styles from '../styles/SearchBar'
 
-export default SearchBar = ({ pokemonDetails, setPokemonDetails, pokemonsList }) => {
+export default SearchBar = ({ setPokemonsList, pokemonsFilttering }) => {
 
     const handlePokemonSearch = (text) => {
-        if (text) {
-            let filteredPokemonList = pokemonDetails.filter((pokemon) => pokemon.name.toLowerCase().includes(text.toLowerCase()))
-            setPokemonDetails(filteredPokemonList)
-        } else {
-            setPokemonDetails(pokemonsList);
-        }
+        const filteredItems = pokemonsFilttering.filter(item => {
+            return item.name.toLowerCase().includes(text.toLowerCase())
+        })
+        setPokemonsList(filteredItems)
     }
 
     return (

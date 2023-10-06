@@ -5,7 +5,7 @@ import Home from "./Home/Home";
 export default function App() {
 
   return (
-    <SafeAreaView >
+    <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       <Home />
     </SafeAreaView>
@@ -17,5 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fff'
   },
 });
