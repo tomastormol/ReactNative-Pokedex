@@ -1,12 +1,14 @@
 import { Text, View, Image, TouchableOpacity } from "react-native";
 import React from 'react'
 import styles from '../styles/Card'
+import { cardColors, boxTypesColors } from '../assets/theme'
 
 export default Card = ({ pokemon }) => {
 
     return (
         <TouchableOpacity >
-            <View style={styles.pokemonCard}>
+
+            <View style={[styles.pokemonCard, { backgroundColor: cardColors[pokemon.types[0].type.name] }]}>
                 <View style={styles.pokemonCardLeft}>
                     <Text style={styles.pokemonID}>
                         #{pokemon.id}
@@ -17,7 +19,7 @@ export default Card = ({ pokemon }) => {
                     <View style={styles.pokemonTypes}>
                         {pokemon?.types.map((type) => {
                             return (
-                                <Text style={styles.pokemonType}>
+                                <Text style={[styles.pokemonType, { backgroundColor: boxTypesColors[type.type.name] }]}>
                                     {type.type.name}
                                 </Text>
                             )

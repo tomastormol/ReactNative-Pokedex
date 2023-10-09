@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar"
-import { StyleSheet, View, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import Home from "./Home/Home";
 
 export default function App() {

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { SafeAreaView, View, FlatList, TextInput, ActivityIndicator } from "react-native";
+import React from "react";
+import { View, FlatList, ActivityIndicator } from "react-native";
 import Card from "../components/Card";
-import styles from './styles'
 import SearchBar from "../components/SearchBar";
 import { useFetchPokemons } from "../utils/useFetchPokemons";
 
@@ -20,6 +19,7 @@ export default function Home() {
                 <View>
                     <SearchBar setPokemonsList={setPokemonsList} pokemonsFilttering={pokemonsFilttering} />
                     <FlatList
+                        showsVerticalScrollIndicator={false}
                         data={pokemonsList}
                         keyExtractor={(item) => item.name}
                         renderItem={({ item }) => <Card pokemon={item} />}

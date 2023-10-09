@@ -4,7 +4,6 @@ export default StyleSheet.create({
     pokemonCard:
     {
         flexDirection: 'row',
-        backgroundColor: "lightgrey",
         marginTop: 30,
         padding: 10,
         borderRadius: 10
@@ -34,7 +33,6 @@ export default StyleSheet.create({
     },
     pokemonType: {
         marginTop: 10,
-        backgroundColor: 'red',
         padding: 8,
         width: 70,
         borderRadius: 10,
