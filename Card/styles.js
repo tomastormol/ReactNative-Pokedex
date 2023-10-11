@@ -1,8 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-    pokemonCard:
-    {
+    pokemonCard: {
         flexDirection: 'row',
         marginTop: 30,
         padding: 10,
@@ -10,7 +9,8 @@ export default StyleSheet.create({
     },
     pokemonCardLeft: {
         width: '50%',
-        position: 'relative'
+        position: 'relative',
+        marginLeft: 5
     },
     pokemonCardRight: {
         width: '50%',
@@ -41,6 +41,10 @@ export default StyleSheet.create({
         height: 120,
         right: -10
     },
+    pokemonTypeImage: {
+        width: 50,
+        height: 50
+    },
     pokemonName: {
         fontSize: 28,
         fontWeight: 'bold',
@@ -53,12 +57,21 @@ export default StyleSheet.create({
         gap: 10
     },
     pokemonType: {
+        flexDirection: 'row',
+        gap: 5,
         marginTop: 10,
         padding: 8,
-        width: 70,
         borderRadius: 10,
         overflow: 'hidden', //Needed for borderRadius. IDK why
-        textAlign: 'center',
-        textTransform: 'capitalize',
     },
+    pokemonTypeImage: {
+        alignSelf: 'center'
+    },
+    pokemonTypeText: {
+        textTransform: 'capitalize',
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: '500',
+        alignSelf: 'center'
+    }
 })

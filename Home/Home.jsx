@@ -1,9 +1,10 @@
 import React from "react";
-import { View, FlatList, ActivityIndicator, SafeAreaView } from "react-native";
-import Card from "../components/Card";
+import { View, FlatList, ActivityIndicator } from "react-native";
 import SearchBar from "../components/SearchBar";
 import { useFetchPokemons } from "../utils/useFetchPokemons";
 import styles from './styles'
+import Card from "../Card/Card";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home({ navigation }) {
 
@@ -11,7 +12,6 @@ export default function Home({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
-
             <View style={{ padding: 10 }}>
                 {isLoading ? (
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -23,7 +23,7 @@ export default function Home({ navigation }) {
                         <FlatList
                             showsVerticalScrollIndicator={false}
                             data={pokemonsList}
-                            keyExtractor={(item) => item.name}
+                            keyExtractor={(item) => item.id}
                             renderItem={({ item }) => <Card pokemon={item} navigation={navigation} />}
                         />
                     </View>
@@ -33,8 +33,8 @@ export default function Home({ navigation }) {
                         <Text>Error fetching data... Please check your internet connection</Text>
                     </View>
                 )}
-
             </View>
         </SafeAreaView>
+
     );
 }
