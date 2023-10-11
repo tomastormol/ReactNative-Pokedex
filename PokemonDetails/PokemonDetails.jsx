@@ -1,10 +1,11 @@
 import { Text, View } from 'react-native'
 import React, { Component } from 'react'
 
-export default PokemonDetails = () => {
+export default function PokemonDetails({ route }) {
+
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>asd</Text>
+            <Text>Name: {route.params.pokemon.name}</Text>
         </View>
     )
 }
