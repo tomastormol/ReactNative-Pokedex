@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, ActivityIndicator } from "react-native";
+import { View, FlatList, ActivityIndicator, Text } from "react-native";
 import SearchBar from "../components/SearchBar";
 import { useFetchPokemons } from "../utils/useFetchPokemons";
 import styles from './styles'

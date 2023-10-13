@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './styles'
 import dotsImage from '../assets/Images/DotsImage.png'
 import { boxTypesColors } from '../assets/theme'
-import { useTypeImage } from './useTypeImage'
+import { useTypeImage } from '../utils/useTypeImage'
 
 export default LeftCard = ({ pokemon }) => {
 
@@ -11,9 +11,7 @@ export default LeftCard = ({ pokemon }) => {
 
     return (
         <View style={styles.pokemonCardLeft}>
-            <Text style={styles.pokemonID}>
-                #{pokemon.id}
-            </Text>
+            {pokemon.id < 100 ? <Text style={styles.pokemonID}>#00{pokemon.id}</Text> : <Text style={styles.pokemonID}>#{pokemon.id}</Text>}
             <Text style={styles.pokemonName}>
                 {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
             </Text>

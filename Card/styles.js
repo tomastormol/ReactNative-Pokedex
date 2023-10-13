@@ -20,7 +20,8 @@ export default StyleSheet.create({
     },
     pokemonID: {
         fontSize: 16,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#17171B99'
     },
     pokemonImage: {
         marginTop: -30,
@@ -38,15 +39,11 @@ export default StyleSheet.create({
     pokemonRightImageCard: {
         position: 'absolute',
         width: 140,
-        height: 120,
+        height: 130,
         right: -10
     },
-    pokemonTypeImage: {
-        width: 50,
-        height: 50
-    },
     pokemonName: {
-        fontSize: 28,
+        fontSize: 26,
         fontWeight: 'bold',
         textTransform: 'capitalize',
         color: '#fff',
@@ -58,14 +55,11 @@ export default StyleSheet.create({
     },
     pokemonType: {
         flexDirection: 'row',
-        gap: 5,
+        gap: 3,
         marginTop: 10,
-        padding: 8,
-        borderRadius: 10,
+        padding: 6,
+        borderRadius: 7,
         overflow: 'hidden', //Needed for borderRadius. IDK why
-    },
-    pokemonTypeImage: {
-        alignSelf: 'center'
     },
     pokemonTypeText: {
         textTransform: 'capitalize',
