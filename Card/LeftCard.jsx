@@ -3,34 +3,11 @@ import React from 'react'
 import styles from './styles'
 import dotsImage from '../assets/Images/DotsImage.png'
 import { boxTypesColors } from '../assets/theme'
-import grass from '../assets/Images/TypesImages/grass.png'
-import poison from '../assets/Images/TypesImages/poison.png'
-import fire from '../assets/Images/TypesImages/fire.png'
+import { useTypeImage } from './useTypeImage'
 
 export default LeftCard = ({ pokemon }) => {
 
-    const TypeImage = (type) => {
-        switch (type) {
-            case 'grass':
-                return (
-                    <View style={styles.pokemonTypeImage}>
-                        <Image source={grass} />
-                    </View>
-                );
-            case 'poison':
-                return (
-                    <View style={styles.pokemonTypeImage}>
-                        <Image source={poison} />
-                    </View>
-                );
-            case 'fire':
-                return (
-                    <View style={styles.pokemonTypeImage}>
-                        <Image source={fire} />
-                    </View>
-                );
-        }
-    }
+    const { switchTypeImage } = useTypeImage()
 
     return (
         <View style={styles.pokemonCardLeft}>
@@ -45,10 +22,10 @@ export default LeftCard = ({ pokemon }) => {
                 source={dotsImage}
             />
             <View style={styles.pokemonTypes}>
-                {pokemon?.types.map((type) => {
+                {pokemon?.types.map((type, index) => {
                     return (
-                        <View style={[styles.pokemonType, { backgroundColor: boxTypesColors[type.type.name] }]}>
-                            {TypeImage(type.type.name)}
+                        <View key={index} style={[styles.pokemonType, { backgroundColor: boxTypesColors[type.type.name] }]}>
+                            {switchTypeImage(type.type.name)}
                             <Text style={styles.pokemonTypeText}>
                                 {type.type.name}
                             </Text>
