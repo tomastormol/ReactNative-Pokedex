@@ -7,6 +7,15 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#fff'
     },
+    bottomDetailsContainer: {
+        flex: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        width: '100%',
+        borderTopLeftRadius: 45,
+        borderTopRightRadius: 45
+    },
     topDetailsContainer: {
         flex: 1,
         flexDirection: 'row',

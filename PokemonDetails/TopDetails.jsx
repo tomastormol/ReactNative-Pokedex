@@ -1,6 +1,6 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { cardColors, boxTypesColors } from '../assets/theme'
+import { boxTypesColors } from '../assets/theme'
 import styles from './styles'
 import cardStyles from '../Card/styles'
 import { useTypeImage } from '../utils/useTypeImage'
@@ -10,7 +10,7 @@ export default function TopDetails({ pokemon }) {
     const { switchTypeImage } = useTypeImage()
 
     return (
-        <View style={[styles.topDetailsContainer, { backgroundColor: cardColors[pokemon.types[0].type.name] }]}>
+        <View style={styles.topDetailsContainer}>
             <Image
                 style={styles.pokemonImage}
                 source={{
