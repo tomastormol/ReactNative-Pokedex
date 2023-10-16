@@ -1,17 +1,17 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { boxTypesColors } from '../assets/theme'
 import styles from './styles'
-import cardStyles from '../Card/styles'
-import { useTypeImage } from '../utils/useTypeImage'
+import About from './About'
+import Evolution from './Evolution'
+import Stats from './Stats'
 
-export default function BottomDetails({ pokemon }) {
-
-    const { switchTypeImage } = useTypeImage()
+export default function BottomDetails({ pokemon, showAbout, showStats, showEvolution }) {
 
     return (
         <View style={styles.bottomDetailsContainer}>
-            <Text>Hola Test</Text>
+            {(!showAbout && !showStats) && <Evolution />}
+            {(showAbout && !showStats) && <About />}
+            {(!showAbout && showStats) && <Stats />}
         </View>
     )
 }
