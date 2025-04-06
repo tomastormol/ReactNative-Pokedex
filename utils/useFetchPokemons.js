@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const url = "https://pokeapi.co/api/v2/"
 const options = "pokemon?limit=151&offset=0";
 const urlPath = `${url}${options}`
+//const urlPath = "https://pokeapi.co/api/v2/pokemon?limit=40&offset=0"
 
 
 export const useFetchPokemons = () => {
@@ -15,24 +16,31 @@ export const useFetchPokemons = () => {
         const fetchFirstGenPokemons = async () => {
             try {
                 const PokemonIdsResponse = await fetch(urlPath);
+                
+                // Verifica si la respuesta es exitosa
+                if (!PokemonIdsResponse.ok) {
+                    throw new Error(`HTTP error! status: ${PokemonIdsResponse.status}`);
+                }
+                
                 const pokemonBody = await PokemonIdsResponse.json();
-
+        
                 const pokemons = await Promise.all(
                     pokemonBody.results.map(async (pokemon) => {
-                        const pDetails = await fetch(pokemon.url)
+                        const pDetails = await fetch(pokemon.url);
                         return await pDetails.json();
                     })
                 );
-                setPokemonsList(pokemons)
-                setPokemonsFilttering(pokemons)
+                setPokemonsList(pokemons);
+                setPokemonsFilttering(pokemons);
             } catch (error) {
-                setIsError(true)
-                console.log(error)
+                setIsError(true);
+                setIsLoading(false);
+                console.log("Error fetching data: ", error);
             } finally {
-                setIsLoading(false)
+                setIsLoading(false);
             }
-
         };
+        
         fetchFirstGenPokemons()
     }, [])
 

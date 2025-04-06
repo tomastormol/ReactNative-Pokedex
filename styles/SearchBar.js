@@ -2,15 +2,19 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     container: {
-
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: 'rgba(169, 169, 169, 0.1)',  // Color de fondo similar al de SwiftUI
+        borderRadius: 16,
+        padding: 16,
+    },
+    icon: {
+        marginRight: 8,
     },
     textInput: {
-        padding: 10,
-        paddingStart: 30,
-        height: 50,
-        borderRadius: 30,
-        backgroundColor: '#fff',
-        borderColor: 'lightgray',
-        borderWidth: 3
+        flex: 1,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'gray',
     },
-})
+});

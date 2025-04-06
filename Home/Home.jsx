@@ -12,29 +12,34 @@ export default function Home({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{ padding: 10 }}>
-                {isLoading ? (
+            <View style={{ padding: 10, flex: 1 }}>
+                {isLoading && (
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                        <ActivityIndicator size={"large"} color="#0071DC" />
-                    </View>
-                ) : (
-                    <View>
-                        <SearchBar setPokemonsList={setPokemonsList} pokemonsFilttering={pokemonsFilttering} />
-                        <FlatList
-                            showsVerticalScrollIndicator={false}
-                            data={pokemonsList}
-                            keyExtractor={(item) => item.id}
-                            renderItem={({ item }) => <Card pokemon={item} navigation={navigation} />}
-                        />
+                        <ActivityIndicator size="large" color="#0071DC" />
                     </View>
                 )}
-                {isError && (
+
+                {!isLoading && isError && (
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         <Text>Error fetching data... Please check your internet connection</Text>
                     </View>
                 )}
+
+                {!isLoading && !isError && (
+                    <>
+                        <SearchBar setPokemonsList={setPokemonsList} pokemonsFilttering={pokemonsFilttering} />
+                        <FlatList
+                            style={{ marginTop: 20 }}
+                            showsVerticalScrollIndicator={false}
+                            data={pokemonsList}
+                            keyExtractor={(item, index) => item.id?.toString() || index.toString()}
+                            renderItem={({ item }) => item && <Card pokemon={item} navigation={navigation} />}
+                        />
+                    </>
+                )}
             </View>
         </SafeAreaView>
+
 
     );
 }
