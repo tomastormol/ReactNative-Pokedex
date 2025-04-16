@@ -6,8 +6,8 @@ import styles from './styles';  // Asegúrate de que la ruta es correcta
 import { cardColors } from '../assets/theme'
 
 export default function PokemonDetails({ route }) {
-    const [showAbout, setShowAbout] = useState(false);
-    const [showStats, setShowStats] = useState(true);
+    const [showAbout, setShowAbout] = useState(true);
+    const [showStats, setShowStats] = useState(false);
     const [showEvolution, setShowEvolution] = useState(false);
 
     return (

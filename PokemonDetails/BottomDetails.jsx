@@ -1,26 +1,21 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import About from "./About";
 
 const BottomDetails = ({ pokemon, showAbout, showStats, showEvolution }) => {
     return (
         <View style={styles.container}>
-            {/* Mostrar contenido condicionalmente basado en las pestañas */}
             {showAbout && (
-                <View style={styles.content}>
-                    <Text style={styles.contentText}>About Pokemon: {pokemon.name}</Text>
-                    {/* Aquí mostrarías la información de About */}
-                </View>
+                <About />
             )}
             {showStats && (
                 <View style={styles.content}>
                     <Text style={styles.contentText}>Stats for {pokemon.name}</Text>
-                    {/* Aquí mostrarías las estadísticas del Pokémon */}
                 </View>
             )}
             {showEvolution && (
                 <View style={styles.content}>
                     <Text style={styles.contentText}>Evolution for {pokemon.name}</Text>
-                    {/* Aquí mostrarías la información de evolución */}
                 </View>
             )}
         </View>
