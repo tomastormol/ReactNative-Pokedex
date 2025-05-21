@@ -2,10 +2,12 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import PokemonWeaknesses from '../components/PokemonWeaknesses'
 
-export default function About() {
+const About = ({ pokemonId }) => {
     return (
         <View>
-            <PokemonWeaknesses pokemonId={1} />
+            <PokemonWeaknesses pokemonId={pokemonId} />
         </View>
     )
 }
+
+export default About

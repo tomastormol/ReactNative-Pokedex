@@ -18,6 +18,7 @@ import steel from '../assets/Images/TypesImages/steel.png'
 import ice from '../assets/Images/TypesImages/ice.png'
 import ghost from '../assets/Images/TypesImages/ghost.png'
 import dragon from '../assets/Images/TypesImages/dragon.png'
+import dark from '../assets/Images/TypesImages/dark.png'
 
 export const useTypeImage = () => {
 
@@ -123,6 +124,12 @@ export const useTypeImage = () => {
                 return (
                     <View style={styles.pokemonTypeImage}>
                         <Image source={dragon} />
+                    </View>
+                )
+            case 'dark':
+                return (
+                    <View style={styles.pokemonTypeImage}>
+                        <Image source={dark} />
                     </View>
                 )
         }

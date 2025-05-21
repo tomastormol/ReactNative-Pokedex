@@ -6,7 +6,7 @@ const BottomDetails = ({ pokemon, showAbout, showStats, showEvolution }) => {
     return (
         <View style={styles.container}>
             {showAbout && (
-                <About />
+                <About pokemonId={pokemon.id} />
             )}
             {showStats && (
                 <View style={styles.content}>

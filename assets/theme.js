@@ -14,7 +14,9 @@ const cardColors = {
     rock: '#BAAB82',
     ghost: '#556AAE',
     ice: '#61CEC0',
-    dragon: '#0F6AC0'
+    dragon: '#0F6AC0',
+    steel: '#417D9A',
+    dark: '#58575F'
 }
 
 const boxTypesColors = {
@@ -33,7 +35,9 @@ const boxTypesColors = {
     rock: '#D4C294',
     ghost: '#8571BE',
     ice: '#91D8DF',
-    dragon: '#7383B9'
+    dragon: '#7383B9',
+    steel: '#4C91B2',
+    dark: '#6D6A7D'
 }
 
 export { cardColors, boxTypesColors }
