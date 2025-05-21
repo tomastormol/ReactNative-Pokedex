@@ -38,7 +38,7 @@ export default StyleSheet.create({
     },
     pokemonRightImageCard: {
         position: 'absolute',
-        width: 140,
+        width: 150,
         height: 130,
         right: -10
     },

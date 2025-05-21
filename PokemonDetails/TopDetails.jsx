@@ -25,6 +25,7 @@ export default function TopDetails({
                         uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`,
                     }}
                 />
+                <View style={styles.pokemonImageCurve} />
                 <View style={cardStyles.pokemonCardLeft}>
                     <Text style={cardStyles.pokemonID}>
                         {pokemon.id < 100 ? <Text style={cardStyles.pokemonID}>#00{pokemon.id}</Text> : <Text style={cardStyles.pokemonID}>#{pokemon.id}</Text>}

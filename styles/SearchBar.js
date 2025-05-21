@@ -4,7 +4,8 @@ export default StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'rgba(169, 169, 169, 0.1)',  // Color de fondo similar al de SwiftUI
+        //backgroundColor: 'rgba(169, 169, 169, 0.1)',
+        backgroundColor: '#ECECEC',
         borderRadius: 16,
         padding: 16,
     },
