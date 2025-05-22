@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const url = "https://pokeapi.co/api/v2/"
-const options = "pokemon?limit=1000&offset=0";
+const options = "pokemon?limit=40&offset=0";
 const urlPath = `${url}${options}`
-//const urlPath = "https://pokeapi.co/api/v2/pokemon?limit=40&offset=0"
-
 
 export const useFetchPokemons = () => {
     const [pokemonsList, setPokemonsList] = useState([])

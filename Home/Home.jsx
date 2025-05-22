@@ -56,7 +56,7 @@ export default function Home({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ padding: 10, flex: 1 }}>
+      <View style={{ padding: 10, flex: 1, width: "100%" }}>
         {isLoading && (
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
             <ActivityIndicator size="large" color="#0071DC" />
@@ -71,9 +71,9 @@ export default function Home({ navigation }) {
 
         {!isLoading && !isError && (
           <>
-            <View style={{ alignItems: "flex-end" }}>
+            <View style={{ alignItems: "flex-end", marginBottom: 10 }}>
               <TouchableOpacity onPress={() => setShowModal(true)}>
-                <Image source={Filter} style={{ width: 30, height: 30 }} />
+                <Image source={Filter} />
               </TouchableOpacity>
             </View>
 
@@ -82,15 +82,28 @@ export default function Home({ navigation }) {
               pokemonsFilttering={pokemonsFilttering}
             />
 
-            <FlatList
-              style={{ marginTop: 20 }}
-              showsVerticalScrollIndicator={false}
-              data={filteredList}
-              keyExtractor={(item, index) => item.id?.toString() || index.toString()}
-              renderItem={({ item }) =>
-                item && <Card pokemon={item} navigation={navigation} />
-              }
-            />
+            <View style={{ flex: 1 }}>
+              <FlatList
+                style={{ marginTop: 10 }}
+                showsVerticalScrollIndicator={false}
+                data={filteredList}
+                contentContainerStyle={{ flexGrow: 1 }}
+                keyExtractor={(item, index) => item.id?.toString() || index.toString()}
+                renderItem={({ item }) =>
+                  item && <Card pokemon={item} navigation={navigation} />
+                }
+                ListEmptyComponent={
+                  <View style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '100%',
+                  }}>
+                    <Text style={{ fontSize: 16, color: 'gray' }}>No se encontraron Pokémon</Text>
+                  </View>
+                }
+              />
+            </View>
           </>
         )}
 

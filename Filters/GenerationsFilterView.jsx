@@ -12,11 +12,9 @@ const generations = [
   { normal: require('../assets/Images/generations/Generation8.png'), selected: require('../assets/Images/generations/Generation8Selected.png'), id: 8 },
 ];
 
-const GenerationsFilterView = ({ onClose, onToggleGeneration }) => {
-  const [selectedGenId, setSelectedGenId] = useState(null);
+const GenerationsFilterView = ({ onClose, onToggleGeneration, selectedGenerations }) => {
 
-  const handleSelect = (id) => {
-    setSelectedGenId(id);
+  const handleToggle = (id) => {
     onToggleGeneration(id);
   };
 
@@ -29,9 +27,12 @@ const GenerationsFilterView = ({ onClose, onToggleGeneration }) => {
           keyExtractor={(item) => item.id.toString()}
           numColumns={2}
           renderItem={({ item }) => {
-            const isSelected = item.id === selectedGenId;
+            const isSelected = selectedGenerations.includes(item.id);
             return (
-              <TouchableOpacity style={styles.imageContainer} onPress={() => handleSelect(item.id)}>
+              <TouchableOpacity
+                style={styles.imageContainer}
+                onPress={() => handleToggle(item.id)}
+              >
                 <Image
                   source={isSelected ? item.selected : item.normal}
                   style={styles.image}
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
 });
 
 export default GenerationsFilterView;
