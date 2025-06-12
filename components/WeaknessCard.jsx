@@ -22,7 +22,7 @@ const WeaknessCard = ({ type, multiplier }) => {
     >
       {switchTypeImage(type)}
       <Text style={cardStyles.pokemonTypeText}>
-        {type} ×{multiplier % 1 === 0 ? multiplier : multiplier.toFixed(2)}
+        {multiplier % 1 === 0 ? multiplier : multiplier.toFixed(2)}
       </Text>
     </View>
   );
