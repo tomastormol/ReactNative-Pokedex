@@ -16,7 +16,7 @@ const WeaknessCard = ({ type, multiplier }) => {
           justifyContent: 'center',
           alignItems: 'center',
           margin: 6,
-          width: 150,
+          width: 75,
         },
       ]}
     >

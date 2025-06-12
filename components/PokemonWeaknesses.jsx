@@ -1,4 +1,3 @@
-// components/PokemonWeaknesses.js
 import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { usePokemonWeaknesses } from '../hooks/usePokemonWeaknesses';
