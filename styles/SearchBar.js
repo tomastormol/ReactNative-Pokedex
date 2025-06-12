@@ -18,4 +18,9 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: 'gray',
     },
+    clearIcon: {
+        position: 'absolute',
+        right: 15,
+    },
+
 });
