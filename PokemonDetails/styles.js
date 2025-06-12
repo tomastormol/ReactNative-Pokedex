@@ -49,7 +49,7 @@ export default StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-        height: 6, // un poco más alto para que la sombra se note
+        height: 6,
         backgroundColor: '#fff',
         borderTopLeftRadius: 50,
         borderTopRightRadius: 50,
