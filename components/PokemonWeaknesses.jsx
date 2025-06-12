@@ -43,7 +43,22 @@ const PokemonWeaknesses = ({ pokemonId }) => {
         const realWeaknesses = Object.entries(effectiveness)
           .map(([type, multiplier]) => ({ type, multiplier }));
 
+        const sortPriority = {
+          4: 0,
+          2: 1,
+          1: 2,
+          0.5: 3,
+          0: 4,
+        };
+
+        realWeaknesses.sort((a, b) => {
+          const aKey = sortPriority[a.multiplier] ?? 5;
+          const bKey = sortPriority[b.multiplier] ?? 5;
+          return aKey - bKey;
+        });
+
         setWeaknesses(realWeaknesses);
+
       } catch (error) {
         console.error('Error fetching weaknesses:', error);
       }
@@ -53,31 +68,31 @@ const PokemonWeaknesses = ({ pokemonId }) => {
   }, [pokemonId]);
 
   return (
-  <View style={styles.container}>
-    <ScrollView contentContainerStyle={styles.gridContainer} showsVerticalScrollIndicator={false}>
-      {weaknesses.map(({ type, multiplier }, index) => (
-        <View
-          key={index}
-          style={[
-            cardStyles.pokemonType,
-            {
-              backgroundColor: boxTypesColors[type],
-              justifyContent: 'center',
-              alignItems: 'center',
-              margin: 6,
-              width: 150
-            },
-          ]}
-        >
-          {switchTypeImage(type)}
-          <Text style={cardStyles.pokemonTypeText}>
-            {type} ×{multiplier % 1 === 0 ? multiplier : multiplier.toFixed(2)}
-          </Text>
-        </View>
-      ))}
-    </ScrollView>
-  </View>
-);
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.gridContainer} showsVerticalScrollIndicator={false}>
+        {weaknesses.map(({ type, multiplier }, index) => (
+          <View
+            key={index}
+            style={[
+              cardStyles.pokemonType,
+              {
+                backgroundColor: boxTypesColors[type],
+                justifyContent: 'center',
+                alignItems: 'center',
+                margin: 6,
+                width: 150
+              },
+            ]}
+          >
+            {switchTypeImage(type)}
+            <Text style={cardStyles.pokemonTypeText}>
+              {type} ×{multiplier % 1 === 0 ? multiplier : multiplier.toFixed(2)}
+            </Text>
+          </View>
+        ))}
+      </ScrollView>
+    </View>
+  );
 
 };
 
