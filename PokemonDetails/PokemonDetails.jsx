@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { View, StatusBar } from "react-native";
-import BottomDetails from "./BottomDetails";  // Asegúrate de que la ruta es correcta
-import TopDetails from "./TopDetails";  // Asegúrate de que la ruta es correcta
-import styles from './styles';  // Asegúrate de que la ruta es correcta
+import BottomDetails from "./BottomDetails";
+import TopDetails from "./TopDetails";
+import styles from './styles';
 import { cardColors } from '../assets/theme'
 
 export default function PokemonDetails({ route }) {
-    const [showAbout, setShowAbout] = useState(true);
+    const [showDamage, setShowDamage] = useState(true);
     const [showStats, setShowStats] = useState(false);
     const [showEvolution, setShowEvolution] = useState(false);
 
@@ -16,10 +16,10 @@ export default function PokemonDetails({ route }) {
             <View style={styles.topDetailsContainer}>
                 <TopDetails
                     pokemon={route.params.pokemon}
-                    setShowAbout={setShowAbout}
+                    setShowDamage={setShowDamage}
                     setShowStats={setShowStats}
                     setShowEvolution={setShowEvolution}
-                    showAbout={showAbout}
+                    showDamage={showDamage}
                     showStats={showStats}
                     showEvolution={showEvolution}
                 />
@@ -27,7 +27,7 @@ export default function PokemonDetails({ route }) {
             <View style={styles.bottomDetailsContainer}>
                 <BottomDetails
                     pokemon={route.params.pokemon}
-                    showAbout={showAbout}
+                    showDamage={showDamage}
                     showStats={showStats}
                     showEvolution={showEvolution}
                 />

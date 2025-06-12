@@ -7,10 +7,10 @@ import { useTypeImage } from '../utils/useTypeImage';
 
 export default function TopDetails({
     pokemon,
-    setShowAbout,
+    setShowDamage,
     setShowStats,
     setShowEvolution,
-    showAbout,
+    showDamage,
     showStats,
     showEvolution
 }) {
@@ -52,16 +52,16 @@ export default function TopDetails({
             <View style={styles.topDetailsContainerBotton}>
                 <TouchableOpacity
                     onPress={() => {
-                        setShowAbout(true);
+                        setShowDamage(true);
                         setShowStats(false);
                         setShowEvolution(false);
                     }}
                 >
-                    <Text style={[styles.topDetailsContainerBottonText, showAbout && { fontWeight: 'bold', fontSize: 18 }]}>About</Text>
+                    <Text style={[styles.topDetailsContainerBottonText, showDamage && { fontWeight: 'bold', fontSize: 18 }]}>Damage</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
-                        setShowAbout(false);
+                        setShowDamage(false);
                         setShowStats(true);
                         setShowEvolution(false);
                     }}
@@ -70,7 +70,7 @@ export default function TopDetails({
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
-                        setShowAbout(false);
+                        setShowDamage(false);
                         setShowStats(false);
                         setShowEvolution(true);
                     }}

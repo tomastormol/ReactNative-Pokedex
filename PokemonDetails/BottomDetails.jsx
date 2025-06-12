@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import About from "./About";
+import Damage from "./Damage";
 import Stats from "./Stats";
 
-const BottomDetails = ({ pokemon, showAbout, showStats, showEvolution }) => {
+const BottomDetails = ({ pokemon, showDamage, showStats, showEvolution }) => {
     return (
         <View style={styles.container}>
-            {showAbout && (
-                <About pokemonId={pokemon.id} />
+            {showDamage && (
+                <Damage pokemonId={pokemon.id} />
             )}
             {showStats && (
                 <View style={styles.content}>
