@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     totalValue: {
-        width: 30,
+        width: 35,
         textAlign: 'center',
         fontWeight: 'bold',
         fontSize: 16,

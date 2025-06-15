@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const url = "https://pokeapi.co/api/v2/"
-const options = "pokemon?limit=1000&offset=0";
+const options = "pokemon?limit=1100&offset=0";
 const urlPath = `${url}${options}`
 
 export const useFetchPokemons = () => {
