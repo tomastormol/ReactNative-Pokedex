@@ -1,6 +1,6 @@
 import React from "react";
 import { View, TouchableOpacity, Image } from "react-native";
-import Filter from "../assets/Images/Filter.png";
+import Filter from "../assets/Images/Generation.png";
 
 export default function FilterButton({ onPress }) {
   return (
