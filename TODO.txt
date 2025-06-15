@@ -2,3 +2,4 @@
 - Add circle image in PokemonDetails.
 - Add pokeball image for the tabs in PokemonDetails.
 - Create styles files for Stats Section
+- Refactor Home Screen

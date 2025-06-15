@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './styles'
 import dotsImage from '../assets/Images/DotsImage.png'
 import { boxTypesColors } from '../assets/theme'
-import { useTypeImage } from '../utils/useTypeImage'
+import { useTypeImage } from '../hooks/useTypeImage'
 
 export default LeftCard = ({ pokemon }) => {
 

@@ -1,6 +1,6 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import styles from './styles'
+import styles from '../utils/styles'
 import dotsImage from '../assets/Images/DotsImage.png'
 import { boxTypesColors } from '../assets/theme'
 import { useTypeImage } from '../utils/useTypeImage'

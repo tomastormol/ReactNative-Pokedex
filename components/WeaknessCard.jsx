@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { useTypeImage } from '../utils/useTypeImage';
+import { useTypeImage } from '../hooks/useTypeImage';
 import { boxTypesColors } from '../assets/theme';
 import cardStyles from '../Card/styles';
 

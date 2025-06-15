@@ -3,7 +3,7 @@ import React from 'react';
 import { boxTypesColors } from '../assets/theme';
 import styles from './styles';
 import cardStyles from '../Card/styles';
-import { useTypeImage } from '../utils/useTypeImage';
+import { useTypeImage } from '../hooks/useTypeImage';
 
 export default function TopDetails({
     pokemon,
@@ -55,7 +55,7 @@ export default function TopDetails({
                         setShowEvolution(false);
                     }}
                 >
-                    <Text style={[styles.topDetailsContainerBottonText, showDamage && { fontWeight: 'bold', fontSize: 18 }]}>Damage</Text>
+                    <Text style={[styles.topDetailsContainerBottonText, showDamage && { fontWeight: 'bold', fontSize: 22 }]}>Damage</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
@@ -64,7 +64,7 @@ export default function TopDetails({
                         setShowEvolution(false);
                     }}
                 >
-                    <Text style={[styles.topDetailsContainerBottonText, showStats && { fontWeight: 'bold', fontSize: 18 }]}>Stats</Text>
+                    <Text style={[styles.topDetailsContainerBottonText, showStats && { fontWeight: 'bold', fontSize: 22 }]}>Stats</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => {
@@ -73,7 +73,7 @@ export default function TopDetails({
                         setShowEvolution(true);
                     }}
                 >
-                    <Text style={[styles.topDetailsContainerBottonText, showEvolution && { fontWeight: 'bold', fontSize: 18 }]}>Evolution</Text>
+                    <Text style={[styles.topDetailsContainerBottonText, showEvolution && { fontWeight: 'bold', fontSize: 22 }]}>Evolution</Text>
                 </TouchableOpacity>
             </View>
         </View>

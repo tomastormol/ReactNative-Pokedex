@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Image } from 'react-native'
-import styles from './styles'
+import { View, Image, StyleSheet } from 'react-native'
 import grass from '../assets/Images/TypesImages/grass.png'
 import poison from '../assets/Images/TypesImages/poison.png'
 import fire from '../assets/Images/TypesImages/fire.png'
@@ -138,3 +137,10 @@ export const useTypeImage = () => {
     return { switchTypeImage }
 
 }
+
+const styles = StyleSheet.create({
+    pokemonTypeImage: {
+        alignSelf: 'center'
+    },
+});
+
