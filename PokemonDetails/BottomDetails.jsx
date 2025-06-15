@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Damage from "./Damage";
 import Stats from "./Stats";
+import Evolution from "./Evolution";
 
 const BottomDetails = ({ pokemon, showDamage, showStats, showEvolution }) => {
     return (
@@ -16,7 +17,7 @@ const BottomDetails = ({ pokemon, showDamage, showStats, showEvolution }) => {
             )}
             {showEvolution && (
                 <View style={styles.content}>
-                    <Text style={styles.contentText}>Evolution for {pokemon.name}</Text>
+                    <Evolution pokemon={pokemon} />
                 </View>
             )}
         </View>
